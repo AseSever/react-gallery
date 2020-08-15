@@ -12,11 +12,12 @@ class App extends Component {
   componentDidMount() {
     this.getGalleryItems();
   }
-
+  // request for our galary items
   getGalleryItems = () => {
     axios.get('/gallery')
       .then(response => {
         console.log(response.data);
+        // inputing gallery items into gallery
         this.setState({
           gallery: response.data
         })
