@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
+import GalleryForm from '../GalleryForm/GalleryForm';
 
 class App extends Component {
 
@@ -47,7 +48,7 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        
+        <GalleryForm />
         <GalleryList 
           gallery={this.state.gallery}
           likeCounter={this.likeCounter}

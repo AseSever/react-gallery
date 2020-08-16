@@ -38,16 +38,22 @@ img {
   height: 200px;
   margin: 30px;
   text-align: center;
-  
 }
 
 .description {
   vertical-align: middle;
-  
 }
 
 .likebtn {
-  
+  margin-left: 0.5rem;
+}
+
+p {
+  margin-right: 0.5rem;
+}
+
+label, button, input {
+  margin-right: 0.5rem;
 }
 
 

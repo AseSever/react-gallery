@@ -28,7 +28,7 @@ class GalleryItem extends Component {
                     }
                 </div>
                 <br/>
-                <div><p>{this.props.galleryItem.likes}</p></div>
+                <p>{this.props.galleryItem.likes}</p>
                 {/* like button */}
                 <br/>
                 <div><button
