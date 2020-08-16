@@ -90,15 +90,14 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br />
-        <GalleryForm handleGalleryItem={this.handleGalleryItem}
+        <GalleryForm 
+          handleGalleryItem={this.handleGalleryItem}
           newGalleryItem={this.state.newGalleryItem}
           handleSubmit={this.handleSubmit}
         />
         <br/>
-        <img src={this.state.newGalleryItem.path} alt=""></img>
-        
-        
-        <GalleryList gallery={this.state.gallery}
+        <GalleryList 
+          gallery={this.state.gallery}
           likeCounter={this.likeCounter}
         />
       </div>
