@@ -4,10 +4,30 @@ const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool.js')
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
-   // for(const galleryItem of galleryItems) {
-    //     if(galleryItem.id == galleryId) {
-    //         galleryItem.likes += 1;
-    //     }
+
+//POST Route
+router.post('/', (req, res) => {
+    console.log(req.body);
+    const itemPath = req.body.path
+    const itemDescription = req.body.description
+    const itemLikes = req.body.likes
+    let queryText = `
+        INSERT INTO "gallery"
+        ("path", "description", "likes")
+        VALUES ($1, $2, $3)
+        `
+
+    pool.query(queryText, [itemPath, itemDescription, itemLikes])
+        .then(result => {
+            res.sendStatus(201)
+        })
+        .catch(error => {
+            console.log('Error in POST route', error);
+            res.sendStatus(500)
+        });
+})
+
+
 // PUT Route
 router.put('/like/:id', (req, res) => {
     console.log(req.params);

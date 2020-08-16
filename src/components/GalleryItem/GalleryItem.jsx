@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 class GalleryItem extends Component {
     // showing picture boolean
     state = {
-        isPicture: true
+        ifPicture: true
     }
 
     togglePicture = () => {
         console.log('click');
         this.setState({
-            isPicture: !this.state.isPicture
+            ifPicture: !this.state.ifPicture
         });
     }
 
@@ -22,13 +22,14 @@ class GalleryItem extends Component {
         return (
             <>
                 <div className="galleryItems" onClick={this.togglePicture}>
-                    {this.state.isPicture ?
+                    {this.state.ifPicture ?
                         <img src={galleryItem.path} alt="" /> :
                         <span className="description">{galleryItem.description}</span>
                     }
                 </div>
                 <br/>
-                <div><p>{this.props.galleryItem.likes}</p></div>
+                
+                <p>{this.props.galleryItem.likes}</p>
                 {/* like button */}
                 <br/>
                 <div><button
