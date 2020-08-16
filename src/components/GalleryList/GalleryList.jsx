@@ -5,7 +5,7 @@ class GalleryList extends Component {
 
     render() {
         return (
-            <div className="galleryList">
+            <div className="container">
                 {this.props.gallery.map(galleryItem => {
                     return (
                         // sourced items into GalleryItems
