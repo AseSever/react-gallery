@@ -20,6 +20,7 @@ npm install pg
 ```
 2. Create a postgreSQL database with the table set up in the ```database.sql``` file.  
  -- There are test values you can enter into the table as well.
+ 
  **To run app**
 3. ```npm run server```
 4. ```npm run client```
