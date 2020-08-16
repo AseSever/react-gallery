@@ -17,12 +17,12 @@ const galleryItems = [
         description: 'Half Dome Yosemite National Park. My next big wilderness hike.', 
         likes: 0 
     },
-    { 
-        id: 4, 
-        path: 'images/edc_las_vegas.jpg', 
-        description: 'EDC Las Vegas. One of the greatest festivals!', 
-        likes: 0 
-    },
+    // { 
+    //     id: 4, 
+    //     path: 'images/edc_las_vegas.jpg', 
+    //     description: 'EDC Las Vegas. One of the greatest festivals!', 
+    //     likes: 0 
+    // },
 ];
 
 module.exports = galleryItems;
