@@ -22,6 +22,7 @@ npm install pg
  -- There are test values you can enter into the table as well.
  
  **To run app**
+ 
 3. ```npm run server```
 4. ```npm run client```
 
