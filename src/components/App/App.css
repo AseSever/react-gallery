@@ -38,10 +38,16 @@ img {
   height: 200px;
   margin: 30px;
   text-align: center;
+  
+}
+
+.description {
+  vertical-align: middle;
+  
 }
 
 .likebtn {
-  align-self: stretch;
+  
 }
 
 
