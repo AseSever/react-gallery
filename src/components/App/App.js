@@ -7,12 +7,54 @@ import GalleryForm from '../GalleryForm/GalleryForm';
 class App extends Component {
 
   state = {
-    gallery: []
+    gallery: [],
+    newGalleryItem: {
+      path: '',
+      description: '',
+      likes: 0
+    }
   }
 
   componentDidMount() {
     this.getGalleryItems();
   }
+  // setting state to make new gallery object
+  handleGalleryItem = (event, propertyName) => {
+    console.log(`Changeing ${propertyName}`);
+
+    this.setState({
+      newGalleryItem: {
+        ...this.state.newGalleryItem,
+        [propertyName]: event.target.value
+      }
+    });
+
+  }
+
+  // handle for click event
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.addGalleryItem();
+  }
+
+  //post request for gallery item
+  addGalleryItem = () => {
+    axios.post('/gallery', this.state.newGalleryItem)
+      .then(response => {
+        this.getGalleryItems();
+        this.setState({
+          newGalleryItem: {
+            path: '',
+            description: '',
+          }
+        })
+      })
+      .catch(error => {
+        alert('Error with request to add gallery item');
+        console.log('Error with POST request', error);
+      });
+  }
+
   // request for our galary items
   getGalleryItems = () => {
     axios.get('/gallery')
@@ -27,7 +69,7 @@ class App extends Component {
         alert('Error in GET request')
       });
   }
-
+  // put route for counting likes
   likeCounter = (id) => {
     axios.put(`/gallery/like/${id}`)
       .then(response => {
@@ -36,9 +78,9 @@ class App extends Component {
       .catch(error => {
         alert('error in PUT request')
         console.log(error);
-        
+
       });
-}
+  }
 
 
   render() {
@@ -47,10 +89,16 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
+        <br />
+        <GalleryForm handleGalleryItem={this.handleGalleryItem}
+          newGalleryItem={this.state.newGalleryItem}
+          handleSubmit={this.handleSubmit}
+        />
         <br/>
-        <GalleryForm />
-        <GalleryList 
-          gallery={this.state.gallery}
+        <img src={this.state.newGalleryItem.path} alt=""></img>
+        
+        
+        <GalleryList gallery={this.state.gallery}
           likeCounter={this.likeCounter}
         />
       </div>
