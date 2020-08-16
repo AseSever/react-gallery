@@ -1,9 +1,26 @@
-# Project Name
+# Gallery of My Life
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+A place to show some pictures and what they are.
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+*Duration : 15 hours*
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+My goal was to create a place to show pictures of things or places that I have, have been, or want to go.  It can be more than that if you so choose with the inputs I added to the project.
+
+The problem I solved was getting the pictures to flip to the description and back when clicking on the picture area.  It came down to deciding where I was going to create an onClick method and get a ternary operator to print out what I wanted.
+
+### Required Install
+```
+npm install express
+npm install pg
+```
+
+### Built On
+```
+react.js
+node.js
+express library
+postgreSQL
+
+```
