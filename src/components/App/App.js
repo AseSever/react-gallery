@@ -16,7 +16,7 @@ class App extends Component {
   getGalleryItems = () => {
     axios.get('/gallery')
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         // inputing gallery items into gallery
         this.setState({
           gallery: response.data
@@ -27,6 +27,19 @@ class App extends Component {
       });
   }
 
+  likeCounter = (id) => {
+    axios.put(`/gallery/like/${id}`)
+      .then(response => {
+        this.getGalleryItems();
+      })
+      .catch(error => {
+        alert('error in PUT request')
+        console.log(error);
+        
+      });
+}
+
+
   render() {
     return (
       <div className="App">
@@ -35,7 +48,10 @@ class App extends Component {
         </header>
         <br/>
         <p>Gallery goes here</p>
-        <GalleryList gallery={this.state.gallery}/>
+        <GalleryList 
+          gallery={this.state.gallery}
+          likeCounter={this.likeCounter}
+        />
       </div>
     );
   }

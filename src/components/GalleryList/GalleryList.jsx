@@ -12,6 +12,7 @@ class GalleryList extends Component {
                         <GalleryItem 
                             key={galleryItem.id} 
                             galleryItem={galleryItem}
+                            likeCounter={this.props.likeCounter}
                         />
                     )
                 })}

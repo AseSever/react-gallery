@@ -13,26 +13,23 @@ class GalleryItem extends Component {
         });
     }
 
-    // toDescription = () => {
-    //     this.state.isPicture ? galleryItemImg : itemDescription
-    // }
-
+   
     render() {
-        // variable to set pictures
-        let galleryItemImg = this.props.galleryItem.path;
-        let itemDescription = this.props.galleryItem.description;
+        // variable to set pictures and description
+        let galleryItem = this.props.galleryItem;
+        
 
         return (
             <>
                 <div className="galleryItems" onClick={this.togglePicture}>
-                
-                    {this.state.isPicture ?
-                        <img src={galleryItemImg} alt="" /> :
-                        <p>{itemDescription}</p>
+                    {this.state.isPicture ? 
+                        <img src={galleryItem.path} alt="" /> : <span>{galleryItem.description}</span>
                     }
                 </div>
-                {/* <button>Like</button> */}
+                <p>{this.props.galleryItem.likes}</p><br/>
+                <button className="likeBtn" onClick={() => this.props.likeCounter(galleryItem.id)}>Like</button><br/>
             </>
+
         )
     }
 }

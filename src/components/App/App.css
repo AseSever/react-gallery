@@ -33,17 +33,21 @@ img {
   flex-wrap: wrap;
 }
 
-.galleryList {
-  display: inline-block;
-}
+
 
 .galleryItems {
-  object-fit: cover;
-  float: left;
   margin: 35px;
   margin-top: 30px;
   width: 200px;
+  height: 200px;
   text-align: center;
   text-align: inherit;
+  
 }
+
+.likebtn {
+  flex-basis: auto;
+
+}
+
 
