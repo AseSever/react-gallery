@@ -1,7 +1,7 @@
 const galleryItems = [
     { 
         id: 1, 
-        path: `images/zion_from_angel's_landing.jpg`, 
+        path: `images/zion_from_angels_landing.jpg`, 
         description: 'Photo of Zion National Park from a ledge of Angels Landing.', 
         likes: 0 
     },
